@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  beelife:
+    image: beelife
+    container_name: beelife  # Name the container "trackbox"
+    stdin_open: true  # Keep the standard input open
+    tty: true         # Allocate a pseudo-TTY (needed for interactive mode)
+    ports:
+        - "8888:8888" # Map port 8888 from the container to port 8888 on the host
+    volumes:
+        - .:/beelife # Mount the current directory (.) to /app inside the container
+    entrypoint: /beelife/entrypoint.sh          # Set the entrypoint
+    command: /bin/bash  # Or whatever command you want to run interactively
+

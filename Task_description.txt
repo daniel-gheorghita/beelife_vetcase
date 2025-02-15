@@ -1,0 +1,22 @@
+While we are having our meeting, we are proposing you this exercise where you will need to interact a little bit more with the platform.
+
+I'm sending you the material for the exercise:
+
+here you can find the dataset: https://app.pollinatorhub.eu/dataset-discovery/VTCSS14.0.0. As you can see, this dataset has already been curated and you have a Dataset report that explains all the metadata so you can make sense of it.
+Here you have the guidelines we use for the metadata directory: https://app.pollinatorhub.eu/metadata (it includes the Descriptor Directory and other material that describes the standardization in the Hub). We have described CLASSES and DESCRIPTORS to help the standardisation. A Class includes a group of terms or descriptors that belong to the same conceptual group (e.g. the Class "Agriculture" includes "Animal Husbandry", "Crop Production" and Land related variables). The Descriptors are the column variables, each of them have been defined within the Hub (e.g., "breeding population").
+Here the guidelines for the Standardisation (SOP 012) and other standard operating procedures or working instructions you may find useful: https://app.pollinatorhub.eu/pages/sop-directory
+The objective is:
+
+1. to standardise the data with the available descriptors (column variables),
+
+2. to analyse it,
+
+3. to produce meaningful results, including some visualisations of the data.
+
+
+
+The research question would be: What is the epidemiological status of Apis mellifera in Austria and Belgium?
+
+
+
+If you have any question related to the data, please contact Michael (in Cc.).

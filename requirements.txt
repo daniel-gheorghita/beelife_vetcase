@@ -1,0 +1,13 @@
+ipympl==0.9.3
+numpy==1.24.4
+notebook
+matplotlib
+openpyxl==3.1.5
+pandas
+seaborn
+scikit-learn
+umap-learn
+geopandas
+folium
+fiona==1.9.6
+shapely
