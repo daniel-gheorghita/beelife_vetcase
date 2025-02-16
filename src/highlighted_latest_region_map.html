@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2966b3f8c7171039c69119b397b139a2 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_2966b3f8c7171039c69119b397b139a2" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2966b3f8c7171039c69119b397b139a2 = L.map(
+                "map_2966b3f8c7171039c69119b397b139a2",
+                {
+                    center: [50.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_894ea0d3d5671c65e31586163161eea7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_894ea0d3d5671c65e31586163161eea7.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_59c0d71143df69d92e2f621456b9953f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#e31a1cff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_59c0d71143df69d92e2f621456b9953f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_59c0d71143df69d92e2f621456b9953f = L.geoJson(null, {
+                onEachFeature: geo_json_59c0d71143df69d92e2f621456b9953f_onEachFeature,
+            
+                style: geo_json_59c0d71143df69d92e2f621456b9953f_styler,
+        });
+
+        function geo_json_59c0d71143df69d92e2f621456b9953f_add (data) {
+            geo_json_59c0d71143df69d92e2f621456b9953f
+                .addData(data);
+        }
+            geo_json_59c0d71143df69d92e2f621456b9953f_add({"bbox": [14.481950130121136, 47.4213375661695, 17.066740796888016, 48.999242837480196], "features": [{"bbox": [14.481950130121136, 47.4213375661695, 17.066740796888016, 48.999242837480196], "geometry": {"coordinates": [[[15.753633425545445, 48.85217844258253], [16.29275651809362, 48.73385192959359], [16.550801152717774, 48.807222848806624], [16.885865169861635, 48.708720423382374], [16.940278025624135, 48.61724544412102], [16.949777879653578, 48.535791855859486], [16.8510428340217, 48.438639879336186], [16.83554926968623, 48.38014409345725], [16.976202765622823, 48.17224447049433], [17.066740796888016, 48.11868162334264], [16.985688512733333, 48.04395561009297], [16.847674937689995, 48.05331831199723], [16.53957642313689, 47.92096478454913], [16.391213575708836, 47.88210066362465], [16.306963592462665, 47.75131554498242], [16.37256407581313, 47.64218759368263], [16.279839694305476, 47.454831889423474], [16.171081082534602, 47.4213375661695], [16.100160063311098, 47.496337617276936], [15.847909267648292, 47.56846854048066], [15.62859974615933, 47.73843834996575], [15.348966078840455, 47.8128613708919], [15.21802968886937, 47.794099994267775], [15.088096308395347, 47.740817916156765], [14.738545057312924, 47.74742633690881], [14.74303671187949, 47.90575591848673], [14.50260170963015, 48.00308362812367], [14.481950130121136, 48.10551129614126], [14.52080758131432, 48.237351594060634], [14.685218394595452, 48.16857232950556], [14.798404857315186, 48.184621029622505], [14.967454859429754, 48.247410863071764], [14.960269565791371, 48.37648255871291], [14.862516030437549, 48.50997057988515], [14.691013826373037, 48.58430192687287], [14.818403696652886, 48.761041010820755], [14.952016051346385, 48.79811311941559], [15.015611872761564, 48.999242837480196], [15.542449603460929, 48.90769690866168], [15.753633425545445, 48.85217844258253]], [[16.184401654407647, 48.17158797876821], [16.252982688325226, 48.13219545934719], [16.53957642276256, 48.14605603370118], [16.57803599841655, 48.14331187852461], [16.521860154595537, 48.256174296108355], [16.404855355970977, 48.29221800709689], [16.247715382804422, 48.25015645610029], [16.184401654407647, 48.17158797876821]]], "type": "Polygon"}, "id": "1388", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Nieder\u00f6sterreich", "NUTS_ID": "AT12", "NUTS_NAME": "Nieder\u00f6sterreich", "URBN_TYPE": null, "outbreaks": 123, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_59c0d71143df69d92e2f621456b9953f.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_868f699e7089f2666e162be94163473c_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#ffd971ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_868f699e7089f2666e162be94163473c_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_868f699e7089f2666e162be94163473c = L.geoJson(null, {
+                onEachFeature: geo_json_868f699e7089f2666e162be94163473c_onEachFeature,
+            
+                style: geo_json_868f699e7089f2666e162be94163473c_styler,
+        });
+
+        function geo_json_868f699e7089f2666e162be94163473c_add (data) {
+            geo_json_868f699e7089f2666e162be94163473c
+                .addData(data);
+        }
+            geo_json_868f699e7089f2666e162be94163473c_add({"bbox": [12.656082919218274, 46.37245348759667, 15.065120556616975, 47.09970097188599], "features": [{"bbox": [12.656082919218274, 46.37245348759667, 15.065120556616975, 47.09970097188599], "geometry": {"coordinates": [[[12.656082919218274, 47.09970097188599], [13.078576209450548, 47.0308321344137], [13.354584093682538, 47.097303370396034], [13.666791970365615, 47.0393569171102], [13.785132567636422, 46.94404788262389], [13.94662607898624, 46.94161941074019], [14.17601605049905, 47.06135330510588], [14.420215716048636, 46.99189671004266], [14.842056550536427, 47.048613330394204], [15.00391560031905, 46.92761917460538], [14.993601711501137, 46.7966302652794], [15.065120556616975, 46.65211265451457], [14.922071375390194, 46.60793345404298], [14.884301204818568, 46.61174457376511], [14.827682159730434, 46.54783206780549], [14.823507872517533, 46.544437656221014], [14.829332755574296, 46.53936594490636], [14.822750186421244, 46.53454255290997], [14.824444330588813, 46.52928722579151], [14.818562798274105, 46.52163628082312], [14.818605832413349, 46.509383022604496], [14.674706775115691, 46.45066036099972], [14.56517535646415, 46.37245348759667], [14.522309898318904, 46.41527763336502], [14.4419614457369, 46.423780939874014], [14.434500307154595, 46.442943627270715], [14.23718544342329, 46.432235987847385], [14.153396347344694, 46.436779160751534], [14.09979752848003, 46.479318094489834], [14.006514959554574, 46.48135987206534], [13.714185081104839, 46.522703436818034], [13.504249359530172, 46.56630384612243], [12.731393018169976, 46.63428809773693], [12.69063519592004, 46.65697203812882], [12.736234079242971, 46.73197685879114], [12.937536378467962, 46.802428906901454], [12.656082919218274, 47.09970097188599]]], "type": "Polygon"}, "id": "1390", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "K\u00e4rnten", "NUTS_ID": "AT21", "NUTS_NAME": "K\u00e4rnten", "URBN_TYPE": null, "outbreaks": 31, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_868f699e7089f2666e162be94163473c.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_ef0933eab8bf6e38e67f34c532330106_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fea347ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_ef0933eab8bf6e38e67f34c532330106_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ef0933eab8bf6e38e67f34c532330106 = L.geoJson(null, {
+                onEachFeature: geo_json_ef0933eab8bf6e38e67f34c532330106_onEachFeature,
+            
+                style: geo_json_ef0933eab8bf6e38e67f34c532330106_styler,
+        });
+
+        function geo_json_ef0933eab8bf6e38e67f34c532330106_add (data) {
+            geo_json_ef0933eab8bf6e38e67f34c532330106
+                .addData(data);
+        }
+            geo_json_ef0933eab8bf6e38e67f34c532330106_add({"bbox": [12.1022472554481, 46.94404788262389, 13.918949936581404, 48.03674679057511], "features": [{"bbox": [12.1022472554481, 46.94404788262389, 13.918949936581404, 48.03674679057511], "geometry": {"coordinates": [[[13.526003298794631, 47.708872416836456], [13.516361785692553, 47.4967759350276], [13.585584706232977, 47.473992939002535], [13.606840383999812, 47.283295603807986], [13.864372262394097, 47.2516934112934], [13.918949936581404, 47.15080296137048], [13.785132567636422, 46.94404788262389], [13.666791970365615, 47.0393569171102], [13.354584093682538, 47.097303370396034], [13.078576209450548, 47.0308321344137], [12.656082919218274, 47.09970097188599], [12.46282113250536, 47.151699518976606], [12.240745396712335, 47.06916835939131], [12.136013771373326, 47.0806674560451], [12.1022472554481, 47.26753941927751], [12.439864042852632, 47.3242275945097], [12.670811806641842, 47.46371594738442], [12.575026261662464, 47.63231597722477], [12.695795412403363, 47.68222299236177], [12.912872511403542, 47.49865145618423], [13.046055369487892, 47.52050256389934], [13.079003517821493, 47.667162955087406], [12.928674957370932, 47.735691481473445], [12.984537638530616, 47.856745406592104], [12.875785693534926, 47.9626091379975], [12.860181681183802, 47.99663984832924], [12.982621480639605, 48.03674679057511], [13.303820985092614, 48.00782439494156], [13.29982329037859, 47.84131865162775], [13.526003298794631, 47.708872416836456]]], "type": "Polygon"}, "id": "1393", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Salzburg", "NUTS_ID": "AT32", "NUTS_NAME": "Salzburg", "URBN_TYPE": null, "outbreaks": 68, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ef0933eab8bf6e38e67f34c532330106.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_fc11207d7c43ea652cd7829e8fb2edb9_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#f0522bff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_fc11207d7c43ea652cd7829e8fb2edb9_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_fc11207d7c43ea652cd7829e8fb2edb9 = L.geoJson(null, {
+                onEachFeature: geo_json_fc11207d7c43ea652cd7829e8fb2edb9_onEachFeature,
+            
+                style: geo_json_fc11207d7c43ea652cd7829e8fb2edb9_styler,
+        });
+
+        function geo_json_fc11207d7c43ea652cd7829e8fb2edb9_add (data) {
+            geo_json_fc11207d7c43ea652cd7829e8fb2edb9
+                .addData(data);
+        }
+            geo_json_fc11207d7c43ea652cd7829e8fb2edb9_add({"bbox": [13.585584706232977, 46.62153532788139, 16.171081082534602, 47.8128613708919], "features": [{"bbox": [13.585584706232977, 46.62153532788139, 16.171081082534602, 47.8128613708919], "geometry": {"coordinates": [[[15.348966078840455, 47.8128613708919], [15.62859974615933, 47.73843834996575], [15.847909267648292, 47.56846854048066], [16.100160063311098, 47.496337617276936], [16.171081082534602, 47.4213375661695], [16.039038330845074, 47.36599027529409], [16.113971098772275, 47.003168366699875], [15.996236035495743, 46.83539866356356], [15.989034107335458, 46.774937062718934], [16.039503544433128, 46.69090183259728], [16.038086132591214, 46.65614554507627], [16.033452325428517, 46.65789415693979], [15.960003641783022, 46.68700583933684], [15.865511136100167, 46.71962998956012], [15.786422177476911, 46.70746934735684], [15.752443758843631, 46.69796885797381], [15.622963369633379, 46.679567654870944], [15.564412249582857, 46.67435823530414], [15.542442112084439, 46.629951080229034], [15.520070185457028, 46.62153532788139], [15.4019795319772, 46.65354840431434], [15.335605918967172, 46.653201983632094], [15.160204494336163, 46.657113612713125], [15.082399691981678, 46.64514489320171], [15.065120556616975, 46.65211265451457], [14.993601711501137, 46.7966302652794], [15.00391560031905, 46.92761917460538], [14.842056550536427, 47.048613330394204], [14.420215716048636, 46.99189671004266], [14.17601605049905, 47.06135330510588], [13.94662607898624, 46.94161941074019], [13.785132567636422, 46.94404788262389], [13.918949936581404, 47.15080296137048], [13.864372262394097, 47.2516934112934], [13.606840383999812, 47.283295603807986], [13.585584706232977, 47.473992939002535], [13.73400926882609, 47.490051959445644], [13.703201158475215, 47.617766947608395], [13.767160087343743, 47.703891636419684], [14.010662811675976, 47.70051113140356], [14.077030026777974, 47.63104611342101], [14.322983947398077, 47.61872752252606], [14.738545057312924, 47.74742633690881], [15.088096308395347, 47.740817916156765], [15.21802968886937, 47.794099994267775], [15.348966078840455, 47.8128613708919]]], "type": "Polygon"}, "id": "1391", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Steiermark", "NUTS_ID": "AT22", "NUTS_NAME": "Steiermark", "URBN_TYPE": null, "outbreaks": 103, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_fc11207d7c43ea652cd7829e8fb2edb9.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_94c6a2476a2b319d471c37e089df688a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fc873aff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_94c6a2476a2b319d471c37e089df688a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_94c6a2476a2b319d471c37e089df688a = L.geoJson(null, {
+                onEachFeature: geo_json_94c6a2476a2b319d471c37e089df688a_onEachFeature,
+            
+                style: geo_json_94c6a2476a2b319d471c37e089df688a_styler,
+        });
+
+        function geo_json_94c6a2476a2b319d471c37e089df688a_add (data) {
+            geo_json_94c6a2476a2b319d471c37e089df688a
+                .addData(data);
+        }
+            geo_json_94c6a2476a2b319d471c37e089df688a_add({"bbox": [12.751554921482263, 47.473992939002535, 14.967454859429754, 48.771605025728434], "features": [{"bbox": [12.751554921482263, 47.473992939002535, 14.967454859429754, 48.771605025728434], "geometry": {"coordinates": [[[14.114430933765902, 48.593379204386764], [14.345616987044242, 48.563311637832385], [14.489529155694907, 48.630204968940376], [14.691013826373037, 48.58430192687287], [14.862516030437549, 48.50997057988515], [14.960269565791371, 48.37648255871291], [14.967454859429754, 48.247410863071764], [14.798404857315186, 48.184621029622505], [14.685218394595452, 48.16857232950556], [14.52080758131432, 48.237351594060634], [14.481950130121136, 48.10551129614126], [14.50260170963015, 48.00308362812367], [14.74303671187949, 47.90575591848673], [14.738545057312924, 47.74742633690881], [14.322983947398077, 47.61872752252606], [14.077030026777974, 47.63104611342101], [14.010662811675976, 47.70051113140356], [13.767160087343743, 47.703891636419684], [13.703201158475215, 47.617766947608395], [13.73400926882609, 47.490051959445644], [13.585584706232977, 47.473992939002535], [13.516361785692553, 47.4967759350276], [13.526003298794631, 47.708872416836456], [13.29982329037859, 47.84131865162775], [13.303820985092614, 48.00782439494156], [12.982621480639605, 48.03674679057511], [12.860181681183802, 47.99663984832924], [12.751554921482263, 48.1128104065153], [12.944684477400697, 48.20669234099521], [13.177043068203576, 48.2943899286354], [13.41432521855066, 48.380144093835455], [13.438430624971964, 48.54889502287666], [13.513497246600243, 48.59096178728723], [13.727090617669711, 48.51301965364796], [13.809691038799562, 48.61491345992896], [13.796106768557138, 48.713600490987574], [13.83950712947715, 48.771605025728434], [14.114430933765902, 48.593379204386764]]], "type": "Polygon"}, "id": "1392", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Ober\u00f6sterreich", "NUTS_ID": "AT31", "NUTS_NAME": "Ober\u00f6sterreich", "URBN_TYPE": null, "outbreaks": 84, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_94c6a2476a2b319d471c37e089df688a.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_ef307921810236a58f8f4d727ef0cfb0_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fe9942ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_ef307921810236a58f8f4d727ef0cfb0_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ef307921810236a58f8f4d727ef0cfb0 = L.geoJson(null, {
+                onEachFeature: geo_json_ef307921810236a58f8f4d727ef0cfb0_onEachFeature,
+            
+                style: geo_json_ef307921810236a58f8f4d727ef0cfb0_styler,
+        });
+
+        function geo_json_ef307921810236a58f8f4d727ef0cfb0_add (data) {
+            geo_json_ef307921810236a58f8f4d727ef0cfb0
+                .addData(data);
+        }
+            geo_json_ef307921810236a58f8f4d727ef0cfb0_add({"bbox": [10.115211979817884, 46.65697203812882, 12.937536378467962, 47.69708757221243], "features": [{"bbox": [10.115211979817884, 46.65697203812882, 12.937536378467962, 47.69708757221243], "geometry": {"coordinates": [[[[12.736234079242971, 46.73197685879114], [12.69063519592004, 46.65697203812882], [12.47792408630655, 46.67983561070659], [12.164068756483024, 46.91487528838844], [12.142597183940266, 46.997157717979235], [12.240745396712335, 47.06916835939131], [12.46282113250536, 47.151699518976606], [12.656082919218274, 47.09970097188599], [12.937536378467962, 46.802428906901454], [12.736234079242971, 46.73197685879114]]], [[[12.670811806641842, 47.46371594738442], [12.439864042852632, 47.3242275945097], [12.1022472554481, 47.26753941927751], [12.136013771373326, 47.0806674560451], [11.750250198913958, 46.983625312032984], [11.627199511745951, 47.013298837370506], [11.16428131536764, 46.96572261932739], [11.030746848193086, 46.781873828795014], [10.810076885607122, 46.77909830134674], [10.667848043969448, 46.863804404357815], [10.469651302255382, 46.854908998201], [10.47109680929425, 46.93683976361879], [10.393509979464147, 46.98283010462143], [10.144974674057718, 46.851009478634374], [10.115211979817884, 46.934041995712505], [10.212787175314547, 47.157280999416216], [10.178352766884297, 47.27011402178842], [10.429380962792148, 47.392417193776744], [10.454438851635778, 47.555797021089816], [10.810076884977668, 47.52045065207458], [10.88614682644841, 47.53678234348735], [10.991202287432479, 47.39613098842949], [11.016500435406195, 47.39636798521921], [11.4214276253914, 47.44485203441267], [11.410219187499992, 47.49532392157933], [11.560552463585646, 47.52160337014255], [11.632883141848806, 47.59244601663084], [12.060662220859664, 47.61874355028822], [12.338045351637732, 47.69708757221243], [12.575026261662464, 47.63231597722477], [12.670811806641842, 47.46371594738442]]]], "type": "MultiPolygon"}, "id": "1394", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Tirol", "NUTS_ID": "AT33", "NUTS_NAME": "Tirol", "URBN_TYPE": null, "outbreaks": 74, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ef307921810236a58f8f4d727ef0cfb0.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_3d436beb42e74762eda37364a8bb8b74_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#ffe88aff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_3d436beb42e74762eda37364a8bb8b74_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3d436beb42e74762eda37364a8bb8b74 = L.geoJson(null, {
+                onEachFeature: geo_json_3d436beb42e74762eda37364a8bb8b74_onEachFeature,
+            
+                style: geo_json_3d436beb42e74762eda37364a8bb8b74_styler,
+        });
+
+        function geo_json_3d436beb42e74762eda37364a8bb8b74_add (data) {
+            geo_json_3d436beb42e74762eda37364a8bb8b74
+                .addData(data);
+        }
+            geo_json_3d436beb42e74762eda37364a8bb8b74_add({"bbox": [9.530749051451899, 46.851009478634374, 10.212787175314547, 47.54624055026764], "features": [{"bbox": [9.530749051451899, 46.851009478634374, 10.212787175314547, 47.54624055026764], "geometry": {"coordinates": [[[10.115211979817884, 46.934041995712505], [10.144974674057718, 46.851009478634374], [9.90404198954207, 46.932877881292455], [9.817761053859488, 47.029599579158294], [9.607078007215934, 47.06077453037089], [9.624738714297392, 47.11799562172281], [9.620580375481051, 47.15164549400586], [9.590928107230235, 47.16468507591638], [9.564655050768721, 47.170305616801585], [9.557721321570764, 47.1875580800168], [9.565192448931045, 47.19121689979923], [9.579292647499809, 47.195100132999], [9.55755141259222, 47.231401902860874], [9.555658633438627, 47.252738838888945], [9.530749051451899, 47.27058101208126], [9.655516696573102, 47.405211265380174], [9.558720701645559, 47.54189287460278], [9.967813722692496, 47.54624055026764], [9.999526182575735, 47.48301713596481], [10.200433606521399, 47.35576015109817], [10.178352766884297, 47.27011402178842], [10.212787175314547, 47.157280999416216], [10.115211979817884, 46.934041995712505]]], "type": "Polygon"}, "id": "1395", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Vorarlberg", "NUTS_ID": "AT34", "NUTS_NAME": "Vorarlberg", "URBN_TYPE": null, "outbreaks": 19, "year": 2020}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3d436beb42e74762eda37364a8bb8b74.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff9a8ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82 = L.geoJson(null, {
+                onEachFeature: geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82_onEachFeature,
+            
+                style: geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82_styler,
+        });
+
+        function geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82_add (data) {
+            geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82
+                .addData(data);
+        }
+            geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82_add({"bbox": [16.184401654407647, 48.13219545934719, 16.57803599841655, 48.29221800709689], "features": [{"bbox": [16.184401654407647, 48.13219545934719, 16.57803599841655, 48.29221800709689], "geometry": {"coordinates": [[[16.184401654407647, 48.17158797876821], [16.247715382804422, 48.25015645610029], [16.404855355970977, 48.29221800709689], [16.521860154595537, 48.256174296108355], [16.57803599841655, 48.14331187852461], [16.53957642276256, 48.14605603370118], [16.252982688325226, 48.13219545934719], [16.184401654407647, 48.17158797876821]]], "type": "Polygon"}, "id": "1389", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Wien", "NUTS_ID": "AT13", "NUTS_NAME": "Wien", "URBN_TYPE": null, "outbreaks": 5, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_f690d5cc24e00d4b95734257998ba618_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff8a6ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_f690d5cc24e00d4b95734257998ba618_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f690d5cc24e00d4b95734257998ba618 = L.geoJson(null, {
+                onEachFeature: geo_json_f690d5cc24e00d4b95734257998ba618_onEachFeature,
+            
+                style: geo_json_f690d5cc24e00d4b95734257998ba618_styler,
+        });
+
+        function geo_json_f690d5cc24e00d4b95734257998ba618_add (data) {
+            geo_json_f690d5cc24e00d4b95734257998ba618
+                .addData(data);
+        }
+            geo_json_f690d5cc24e00d4b95734257998ba618_add({"bbox": [15.996236035495743, 46.83539866356356, 17.160797384405882, 48.11868162334264], "features": [{"bbox": [15.996236035495743, 46.83539866356356, 17.160797384405882, 48.11868162334264], "geometry": {"coordinates": [[[17.066740796888016, 48.11868162334264], [17.160797384405882, 48.00665656242419], [17.030464278363077, 47.713092678995864], [16.56715543043756, 47.73015455769378], [16.42154238469295, 47.66529808788647], [16.539576423400167, 47.636691180811596], [16.68778920222531, 47.57023161234371], [16.646220083977436, 47.446596932575964], [16.539576422572694, 47.409531000368204], [16.433761690702887, 47.352918665367746], [16.456144163039866, 47.02500656913738], [16.113849224648447, 46.86906811714382], [16.05839037847813, 46.83867000985831], [15.996236035495743, 46.83539866356356], [16.113971098772275, 47.003168366699875], [16.039038330845074, 47.36599027529409], [16.171081082534602, 47.4213375661695], [16.279839694305476, 47.454831889423474], [16.37256407581313, 47.64218759368263], [16.306963592462665, 47.75131554498242], [16.391213575708836, 47.88210066362465], [16.53957642313689, 47.92096478454913], [16.847674937689995, 48.05331831199723], [16.985688512733333, 48.04395561009297], [17.066740796888016, 48.11868162334264]]], "type": "Polygon"}, "id": "1387", "properties": {"CNTR_CODE": "AT", "COAST_TYPE": null, "LEVL_CODE": 2, "MOUNT_TYPE": null, "NAME_LATN": "Burgenland", "NUTS_ID": "AT11", "NUTS_NAME": "Burgenland", "URBN_TYPE": null, "outbreaks": 6, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_f690d5cc24e00d4b95734257998ba618.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_9d9cb6200a07b9d46109a2ea25346991_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffbaaff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_9d9cb6200a07b9d46109a2ea25346991_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_9d9cb6200a07b9d46109a2ea25346991 = L.geoJson(null, {
+                onEachFeature: geo_json_9d9cb6200a07b9d46109a2ea25346991_onEachFeature,
+            
+                style: geo_json_9d9cb6200a07b9d46109a2ea25346991_styler,
+        });
+
+        function geo_json_9d9cb6200a07b9d46109a2ea25346991_add (data) {
+            geo_json_9d9cb6200a07b9d46109a2ea25346991
+                .addData(data);
+        }
+            geo_json_9d9cb6200a07b9d46109a2ea25346991_add({"bbox": [3.5265184956906905, 50.461735482091576, 4.100482870277267, 50.75072509385188], "features": [{"bbox": [3.5265184956906905, 50.461735482091576, 4.100482870277267, 50.75072509385188], "geometry": {"coordinates": [[[3.8153903806504923, 50.75072509385188], [3.895736335560349, 50.73294454955849], [3.9496552053629097, 50.696254913427644], [4.100482870277267, 50.70595553144264], [4.091846549427427, 50.66885392139688], [3.9621064534018484, 50.59014885180016], [3.655510061736411, 50.461735482091576], [3.615081370699013, 50.490398972127224], [3.6750021528068286, 50.608254201113326], [3.5265184956906905, 50.674326862672444], [3.541272589624391, 50.73370037109299], [3.8153903806504923, 50.75072509385188]]], "type": "Polygon"}, "id": "155", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Ath", "NUTS_ID": "BE32A", "NUTS_NAME": "Arr. Ath", "URBN_TYPE": null, "outbreaks": 4, "year": 2019}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9d9cb6200a07b9d46109a2ea25346991.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_45ccd3908033bcead31c37388e72183e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#ffee95ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_45ccd3908033bcead31c37388e72183e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_45ccd3908033bcead31c37388e72183e = L.geoJson(null, {
+                onEachFeature: geo_json_45ccd3908033bcead31c37388e72183e_onEachFeature,
+            
+                style: geo_json_45ccd3908033bcead31c37388e72183e_styler,
+        });
+
+        function geo_json_45ccd3908033bcead31c37388e72183e_add (data) {
+            geo_json_45ccd3908033bcead31c37388e72183e
+                .addData(data);
+        }
+            geo_json_45ccd3908033bcead31c37388e72183e_add({"bbox": [3.655510061736411, 50.32647972473458, 4.075326563800149, 50.59014885180016], "features": [{"bbox": [3.655510061736411, 50.32647972473458, 4.075326563800149, 50.59014885180016], "geometry": {"coordinates": [[[4.075326563800149, 50.464763449366814], [4.027774357626013, 50.35833050868569], [3.704656679268842, 50.32647972473458], [3.655510061736411, 50.461735482091576], [3.9621064534018484, 50.59014885180016], [4.075326563800149, 50.464763449366814]]], "type": "Polygon"}, "id": "152", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Mons", "NUTS_ID": "BE323", "NUTS_NAME": "Arr. Mons", "URBN_TYPE": null, "outbreaks": 14, "year": 2020}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_45ccd3908033bcead31c37388e72183e.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_56f00198e322b3f7d93687c039d16488_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffeb0ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_56f00198e322b3f7d93687c039d16488_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_56f00198e322b3f7d93687c039d16488 = L.geoJson(null, {
+                onEachFeature: geo_json_56f00198e322b3f7d93687c039d16488_onEachFeature,
+            
+                style: geo_json_56f00198e322b3f7d93687c039d16488_styler,
+        });
+
+        function geo_json_56f00198e322b3f7d93687c039d16488_add (data) {
+            geo_json_56f00198e322b3f7d93687c039d16488
+                .addData(data);
+        }
+            geo_json_56f00198e322b3f7d93687c039d16488_add({"bbox": [3.841837553315604, 50.952754993940204, 4.240998891242058, 51.137440457979395], "features": [{"bbox": [3.841837553315604, 50.952754993940204, 4.240998891242058, 51.137440457979395], "geometry": {"coordinates": [[[3.8477011697087327, 50.952754993940204], [3.841837553315604, 51.03616910509986], [3.9231066602265616, 51.07601150648195], [4.071413828603275, 51.137440457979395], [4.175791970379503, 51.10121161223452], [4.240998891242058, 51.03686908750626], [4.147153067004718, 50.96939834482779], [3.8477011697087327, 50.952754993940204]]], "type": "Polygon"}, "id": "136", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Dendermonde", "NUTS_ID": "BE232", "NUTS_NAME": "Arr. Dendermonde", "URBN_TYPE": null, "outbreaks": 1, "year": 2017}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_56f00198e322b3f7d93687c039d16488.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_c6c82a34c5da4b1f7eec4476e27cee7f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff8a6ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_c6c82a34c5da4b1f7eec4476e27cee7f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_c6c82a34c5da4b1f7eec4476e27cee7f = L.geoJson(null, {
+                onEachFeature: geo_json_c6c82a34c5da4b1f7eec4476e27cee7f_onEachFeature,
+            
+                style: geo_json_c6c82a34c5da4b1f7eec4476e27cee7f_styler,
+        });
+
+        function geo_json_c6c82a34c5da4b1f7eec4476e27cee7f_add (data) {
+            geo_json_c6c82a34c5da4b1f7eec4476e27cee7f
+                .addData(data);
+        }
+            geo_json_c6c82a34c5da4b1f7eec4476e27cee7f_add({"bbox": [2.8562933753638564, 50.490398972127224, 3.6750021528068286, 50.797660393258965], "features": [{"bbox": [2.8562933753638564, 50.490398972127224, 3.6750021528068286, 50.797660393258965], "geometry": {"coordinates": [[[[3.615081370699013, 50.490398972127224], [3.437054303355217, 50.508539645662616], [3.313043488517601, 50.52117614904189], [3.176995843331754, 50.75616460786275], [3.366960295510779, 50.72595195578671], [3.437054303934013, 50.75594860825212], [3.460305332358492, 50.7658988597672], [3.541272589624391, 50.73370037109299], [3.5265184956906905, 50.674326862672444], [3.6750021528068286, 50.608254201113326], [3.615081370699013, 50.490398972127224]]], [[[3.016326594667387, 50.774482871766935], [2.8643491307177733, 50.70749294022159], [2.8562933753638564, 50.744894540372016], [2.958199992364784, 50.797660393258965], [3.016326594667387, 50.774482871766935]]]], "type": "MultiPolygon"}, "id": "153", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Tournai-Mouscron", "NUTS_ID": "BE328", "NUTS_NAME": "Arr. Tournai-Mouscron", "URBN_TYPE": null, "outbreaks": 6, "year": 2020}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_c6c82a34c5da4b1f7eec4476e27cee7f.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_ccb30c073c2c74585cbb2d0a6f85031a_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff6a1ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_ccb30c073c2c74585cbb2d0a6f85031a_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_ccb30c073c2c74585cbb2d0a6f85031a = L.geoJson(null, {
+                onEachFeature: geo_json_ccb30c073c2c74585cbb2d0a6f85031a_onEachFeature,
+            
+                style: geo_json_ccb30c073c2c74585cbb2d0a6f85031a_styler,
+        });
+
+        function geo_json_ccb30c073c2c74585cbb2d0a6f85031a_add (data) {
+            geo_json_ccb30c073c2c74585cbb2d0a6f85031a
+                .addData(data);
+        }
+            geo_json_ccb30c073c2c74585cbb2d0a6f85031a_add({"bbox": [4.263345847410914, 50.321315874032805, 4.588662257120102, 50.54915238915713], "features": [{"bbox": [4.263345847410914, 50.321315874032805, 4.588662257120102, 50.54915238915713], "geometry": {"coordinates": [[[4.267735427686702, 50.47157312296375], [4.325281434680805, 50.54915238915713], [4.577538223948476, 50.54228597113087], [4.588662257120102, 50.321315874032805], [4.474987156592934, 50.32760989595521], [4.263345847410914, 50.4253045689582], [4.267735427686702, 50.47157312296375]]], "type": "Polygon"}, "id": "156", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Charleroi", "NUTS_ID": "BE32B", "NUTS_NAME": "Arr. Charleroi", "URBN_TYPE": null, "outbreaks": 8, "year": 2021}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_ccb30c073c2c74585cbb2d0a6f85031a.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_a76566085cc9ae2fcbd9641e9b82b54e_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffcacff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_a76566085cc9ae2fcbd9641e9b82b54e_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a76566085cc9ae2fcbd9641e9b82b54e = L.geoJson(null, {
+                onEachFeature: geo_json_a76566085cc9ae2fcbd9641e9b82b54e_onEachFeature,
+            
+                style: geo_json_a76566085cc9ae2fcbd9641e9b82b54e_styler,
+        });
+
+        function geo_json_a76566085cc9ae2fcbd9641e9b82b54e_add (data) {
+            geo_json_a76566085cc9ae2fcbd9641e9b82b54e
+                .addData(data);
+        }
+            geo_json_a76566085cc9ae2fcbd9641e9b82b54e_add({"bbox": [4.334357498008579, 49.94161596951312, 4.796697108254327, 50.32760989595521], "features": [{"bbox": [4.334357498008579, 49.94161596951312, 4.796697108254327, 50.32760989595521], "geometry": {"coordinates": [[[4.75336167558162, 50.275151048764755], [4.796697108254327, 50.148678157734864], [4.663390216554257, 49.99497060776053], [4.432493778654865, 49.94161596951312], [4.334357498008579, 50.25500012423022], [4.474987156592934, 50.32760989595521], [4.588662257120102, 50.321315874032805], [4.75336167558162, 50.275151048764755]]], "type": "Polygon"}, "id": "171", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Philippeville", "NUTS_ID": "BE353", "NUTS_NAME": "Arr. Philippeville", "URBN_TYPE": null, "outbreaks": 3, "year": 2020}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_a76566085cc9ae2fcbd9641e9b82b54e.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_9933a097aaab087151478afec9f26b13_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffdaeff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_9933a097aaab087151478afec9f26b13_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_9933a097aaab087151478afec9f26b13 = L.geoJson(null, {
+                onEachFeature: geo_json_9933a097aaab087151478afec9f26b13_onEachFeature,
+            
+                style: geo_json_9933a097aaab087151478afec9f26b13_styler,
+        });
+
+        function geo_json_9933a097aaab087151478afec9f26b13_add (data) {
+            geo_json_9933a097aaab087151478afec9f26b13
+                .addData(data);
+        }
+            geo_json_9933a097aaab087151478afec9f26b13_add({"bbox": [4.577538223948476, 50.275151048764755, 5.221259291825813, 50.6422425952871], "features": [{"bbox": [4.577538223948476, 50.275151048764755, 5.221259291825813, 50.6422425952871], "geometry": {"coordinates": [[[5.028494827377699, 50.58882155172594], [5.221259291825813, 50.417297397919725], [5.032959140419384, 50.34967060675724], [4.797983775572997, 50.347157372230846], [4.75336167558162, 50.275151048764755], [4.588662257120102, 50.321315874032805], [4.577538223948476, 50.54228597113087], [4.983340932098701, 50.6422425952871], [5.028494827377699, 50.58882155172594]]], "type": "Polygon"}, "id": "170", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Namur", "NUTS_ID": "BE352", "NUTS_NAME": "Arr. Namur", "URBN_TYPE": null, "outbreaks": 2, "year": 2021}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_9933a097aaab087151478afec9f26b13.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_62f556f556b494e04362266e453434be_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffdaeff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_62f556f556b494e04362266e453434be_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_62f556f556b494e04362266e453434be = L.geoJson(null, {
+                onEachFeature: geo_json_62f556f556b494e04362266e453434be_onEachFeature,
+            
+                style: geo_json_62f556f556b494e04362266e453434be_styler,
+        });
+
+        function geo_json_62f556f556b494e04362266e453434be_add (data) {
+            geo_json_62f556f556b494e04362266e453434be
+                .addData(data);
+        }
+            geo_json_62f556f556b494e04362266e453434be_add({"bbox": [4.242041705415236, 51.07870579686788, 4.755975154670865, 51.470491610699824], "features": [{"bbox": [4.242041705415236, 51.07870579686788, 4.755975154670865, 51.470491610699824], "geometry": {"coordinates": [[[4.694646977364654, 51.1784059203488], [4.436279126142975, 51.07870579686788], [4.3078284939758085, 51.12503445737221], [4.298609211474228, 51.28941064320876], [4.242041705415236, 51.35396109525105], [4.2537450336749805, 51.35542666239499], [4.243657894604261, 51.374737012055704], [4.279565168522002, 51.37601737829806], [4.398315850405061, 51.3692394655733], [4.413481483588787, 51.44456632715057], [4.488827106188758, 51.470491610699824], [4.669544110541935, 51.42638404479556], [4.755975154670865, 51.27680438608185], [4.694646977364654, 51.1784059203488]]], "type": "Polygon"}, "id": "129", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Antwerpen", "NUTS_ID": "BE211", "NUTS_NAME": "Arr. Antwerpen", "URBN_TYPE": null, "outbreaks": 2, "year": 2018}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_62f556f556b494e04362266e453434be.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_51013e50c8709245b453b8df492308f3_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff9a8ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_51013e50c8709245b453b8df492308f3_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_51013e50c8709245b453b8df492308f3 = L.geoJson(null, {
+                onEachFeature: geo_json_51013e50c8709245b453b8df492308f3_onEachFeature,
+            
+                style: geo_json_51013e50c8709245b453b8df492308f3_styler,
+        });
+
+        function geo_json_51013e50c8709245b453b8df492308f3_add (data) {
+            geo_json_51013e50c8709245b453b8df492308f3
+                .addData(data);
+        }
+            geo_json_51013e50c8709245b453b8df492308f3_add({"bbox": [3.895736335560349, 50.696254913427644, 4.597269111973384, 51.03686908750626], "features": [{"bbox": [3.895736335560349, 50.696254913427644, 4.597269111973384, 51.03686908750626], "geometry": {"coordinates": [[[4.528663000315654, 50.99226457385027], [4.568552775301655, 50.93258497535442], [4.521736541858594, 50.841027936103], [4.597269111973384, 50.76353435484202], [4.100482870277267, 50.70595553144264], [3.9496552053629097, 50.696254913427644], [3.895736335560349, 50.73294454955849], [4.039447827328128, 50.79886705226035], [4.147153067004718, 50.96939834482779], [4.240998891242058, 51.03686908750626], [4.528663000315654, 50.99226457385027]], [[4.2677126899783016, 50.87259817866631], [4.348486404582429, 50.768117652809956], [4.506685613436824, 50.78369920184566], [4.41265372781821, 50.9149309650254], [4.2677126899783016, 50.87259817866631]]], "type": "Polygon"}, "id": "141", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Halle-Vilvoorde", "NUTS_ID": "BE241", "NUTS_NAME": "Arr. Halle-Vilvoorde", "URBN_TYPE": null, "outbreaks": 5, "year": 2021}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_51013e50c8709245b453b8df492308f3.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_69f93d0dec2460dac7b474192d6bed16_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffcacff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_69f93d0dec2460dac7b474192d6bed16_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_69f93d0dec2460dac7b474192d6bed16 = L.geoJson(null, {
+                onEachFeature: geo_json_69f93d0dec2460dac7b474192d6bed16_onEachFeature,
+            
+                style: geo_json_69f93d0dec2460dac7b474192d6bed16_styler,
+        });
+
+        function geo_json_69f93d0dec2460dac7b474192d6bed16_add (data) {
+            geo_json_69f93d0dec2460dac7b474192d6bed16
+                .addData(data);
+        }
+            geo_json_69f93d0dec2460dac7b474192d6bed16_add({"bbox": [5.4174194504315265, 49.8206596196154, 6.024899633938699, 50.32985289131921], "features": [{"bbox": [5.4174194504315265, 49.8206596196154, 6.024899633938699, 50.32985289131921], "geometry": {"coordinates": [[[5.4174194504315265, 50.048446523833945], [5.633095151116854, 50.10603401328709], [5.72154960441786, 50.26198954165932], [5.980197733367205, 50.32985289131921], [6.024899633938699, 50.18277939029422], [5.899197083132014, 50.10280794631992], [5.746363995092075, 49.853614451826076], [5.700612070655159, 49.8206596196154], [5.52381452852208, 49.88943667891081], [5.526114852304825, 49.962840334002365], [5.4174194504315265, 50.048446523833945]]], "type": "Polygon"}, "id": "165", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Bastogne", "NUTS_ID": "BE342", "NUTS_NAME": "Arr. Bastogne", "URBN_TYPE": null, "outbreaks": 3, "year": 2019}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_69f93d0dec2460dac7b474192d6bed16.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff9a8ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57 = L.geoJson(null, {
+                onEachFeature: geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57_onEachFeature,
+            
+                style: geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57_styler,
+        });
+
+        function geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57_add (data) {
+            geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57
+                .addData(data);
+        }
+            geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57_add({"bbox": [5.684699404379951, 49.54577075971663, 5.893725008703598, 49.853614451826076], "features": [{"bbox": [5.684699404379951, 49.54577075971663, 5.893725008703598, 49.853614451826076], "geometry": {"coordinates": [[[5.684699404379951, 49.782394510487755], [5.700612070655159, 49.8206596196154], [5.746363995092075, 49.853614451826076], [5.893725008703598, 49.66488379196124], [5.818116879399927, 49.54631057085923], [5.734526862018468, 49.54577075971663], [5.684699404379951, 49.782394510487755]]], "type": "Polygon"}, "id": "164", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Arlon", "NUTS_ID": "BE341", "NUTS_NAME": "Arr. Arlon", "URBN_TYPE": null, "outbreaks": 5, "year": 2019}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_e019279af2745a8e72e1625668835a2b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fff9a8ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_e019279af2745a8e72e1625668835a2b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_e019279af2745a8e72e1625668835a2b = L.geoJson(null, {
+                onEachFeature: geo_json_e019279af2745a8e72e1625668835a2b_onEachFeature,
+            
+                style: geo_json_e019279af2745a8e72e1625668835a2b_styler,
+        });
+
+        function geo_json_e019279af2745a8e72e1625668835a2b_add (data) {
+            geo_json_e019279af2745a8e72e1625668835a2b
+                .addData(data);
+        }
+            geo_json_e019279af2745a8e72e1625668835a2b_add({"bbox": [5.153738464074949, 49.49732447852081, 5.734526862018468, 49.782394510487755], "features": [{"bbox": [5.153738464074949, 49.49732447852081, 5.734526862018468, 49.782394510487755], "geometry": {"coordinates": [[[5.393511244511907, 49.617110893632656], [5.153738464074949, 49.71792598649011], [5.231440286620994, 49.77363657303382], [5.684699404379951, 49.782394510487755], [5.734526862018468, 49.54577075971663], [5.470716545629636, 49.49732447852081], [5.393511244511907, 49.617110893632656]]], "type": "Polygon"}, "id": "168", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Virton", "NUTS_ID": "BE345", "NUTS_NAME": "Arr. Virton", "URBN_TYPE": null, "outbreaks": 5, "year": 2020}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_e019279af2745a8e72e1625668835a2b.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_3a05710b00dff7be26934c7b585f1efe_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffeb0ff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_3a05710b00dff7be26934c7b585f1efe_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_3a05710b00dff7be26934c7b585f1efe = L.geoJson(null, {
+                onEachFeature: geo_json_3a05710b00dff7be26934c7b585f1efe_onEachFeature,
+            
+                style: geo_json_3a05710b00dff7be26934c7b585f1efe_styler,
+        });
+
+        function geo_json_3a05710b00dff7be26934c7b585f1efe_add (data) {
+            geo_json_3a05710b00dff7be26934c7b585f1efe
+                .addData(data);
+        }
+            geo_json_3a05710b00dff7be26934c7b585f1efe_add({"bbox": [3.9231066602265616, 51.07601150648195, 4.3078284939758085, 51.35396109525105], "features": [{"bbox": [3.9231066602265616, 51.07601150648195, 4.3078284939758085, 51.35396109525105], "geometry": {"coordinates": [[[3.9231066602265616, 51.07601150648195], [3.9776665141339524, 51.225132112569455], [4.234817405508229, 51.34825420302697], [4.242041705415236, 51.35396109525105], [4.298609211474228, 51.28941064320876], [4.3078284939758085, 51.12503445737221], [4.175791970379503, 51.10121161223452], [4.071413828603275, 51.137440457979395], [3.9231066602265616, 51.07601150648195]]], "type": "Polygon"}, "id": "140", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Sint-Niklaas", "NUTS_ID": "BE236", "NUTS_NAME": "Arr. Sint-Niklaas", "URBN_TYPE": null, "outbreaks": 1, "year": 2021}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_3a05710b00dff7be26934c7b585f1efe.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+        function geo_json_b76620b7d801bfcffb8a4da9244ca419_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "#fffdaeff", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+
+        function geo_json_b76620b7d801bfcffb8a4da9244ca419_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b76620b7d801bfcffb8a4da9244ca419 = L.geoJson(null, {
+                onEachFeature: geo_json_b76620b7d801bfcffb8a4da9244ca419_onEachFeature,
+            
+                style: geo_json_b76620b7d801bfcffb8a4da9244ca419_styler,
+        });
+
+        function geo_json_b76620b7d801bfcffb8a4da9244ca419_add (data) {
+            geo_json_b76620b7d801bfcffb8a4da9244ca419
+                .addData(data);
+        }
+            geo_json_b76620b7d801bfcffb8a4da9244ca419_add({"bbox": [4.75336167558162, 49.80182612480245, 5.393235055129962, 50.417297397919725], "features": [{"bbox": [4.75336167558162, 49.80182612480245, 5.393235055129962, 50.417297397919725], "geometry": {"coordinates": [[[4.96943102038776, 49.80182612480245], [4.871562794475356, 49.810970532116045], [4.8099507804285695, 49.97485706966615], [4.869741604169468, 50.12882880059449], [4.796697108254327, 50.148678157734864], [4.75336167558162, 50.275151048764755], [4.797983775572997, 50.347157372230846], [5.032959140419384, 50.34967060675724], [5.221259291825813, 50.417297397919725], [5.393235055129962, 50.37936404180357], [5.37807581385635, 50.29461393991308], [5.258113562568193, 50.22299359291266], [5.26306344074606, 50.108489846752136], [5.007400754102315, 50.0481182765063], [5.096171078924681, 49.930438776724685], [4.96943102038776, 49.80182612480245]]], "type": "Polygon"}, "id": "169", "properties": {"CNTR_CODE": "BE", "COAST_TYPE": null, "LEVL_CODE": 3, "MOUNT_TYPE": null, "NAME_LATN": "Arr. Dinant", "NUTS_ID": "BE351", "NUTS_NAME": "Arr. Dinant", "URBN_TYPE": null, "outbreaks": 2, "year": 2022}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+            geo_json_b76620b7d801bfcffb8a4da9244ca419.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+    var color_map_eb71c6586c826934062b672eff56e1e8 = {};
+
+    
+    color_map_eb71c6586c826934062b672eff56e1e8.color = d3.scale.threshold()
+              .domain([0.0, 0.24649298597194388, 0.49298597194388777, 0.7394789579158316, 0.9859719438877755, 1.2324649298597194, 1.4789579158316633, 1.7254509018036073, 1.971943887775551, 2.218436873747495, 2.464929859719439, 2.711422845691383, 2.9579158316633265, 3.2044088176352705, 3.4509018036072145, 3.697394789579158, 3.943887775551102, 4.190380761523046, 4.43687374749499, 4.683366733466934, 4.929859719438878, 5.176352705410822, 5.422845691382766, 5.669338677354709, 5.915831663326653, 6.162324649298597, 6.408817635270541, 6.655310621242485, 6.901803607214429, 7.148296593186373, 7.394789579158316, 7.64128256513026, 7.887775551102204, 8.134268537074147, 8.380761523046091, 8.627254509018035, 8.87374749498998, 9.120240480961924, 9.366733466933868, 9.613226452905812, 9.859719438877756, 10.1062124248497, 10.352705410821644, 10.599198396793588, 10.845691382765532, 11.092184368737476, 11.338677354709418, 11.585170340681362, 11.831663326653306, 12.07815631262525, 12.324649298597194, 12.571142284569138, 12.817635270541082, 13.064128256513026, 13.31062124248497, 13.557114228456914, 13.803607214428858, 14.050100200400802, 14.296593186372746, 14.54308617234469, 14.789579158316633, 15.036072144288577, 15.28256513026052, 15.529058116232465, 15.775551102204409, 16.022044088176354, 16.268537074148295, 16.51503006012024, 16.761523046092183, 17.008016032064127, 17.25450901803607, 17.501002004008015, 17.74749498997996, 17.993987975951903, 18.240480961923847, 18.48697394789579, 18.733466933867735, 18.97995991983968, 19.226452905811623, 19.472945891783567, 19.71943887775551, 19.965931863727455, 20.2124248496994, 20.458917835671343, 20.705410821643287, 20.95190380761523, 21.198396793587175, 21.44488977955912, 21.691382765531063, 21.937875751503007, 22.18436873747495, 22.430861723446895, 22.677354709418836, 22.92384769539078, 23.170340681362724, 23.416833667334668, 23.663326653306612, 23.909819639278556, 24.1563126252505, 24.402805611222444, 24.649298597194388, 24.895791583166332, 25.142284569138276, 25.38877755511022, 25.635270541082164, 25.881763527054108, 26.128256513026052, 26.374749498997996, 26.62124248496994, 26.867735470941884, 27.11422845691383, 27.360721442885772, 27.607214428857716, 27.85370741482966, 28.100200400801604, 28.34669338677355, 28.593186372745492, 28.839679358717436, 29.08617234468938, 29.33266533066132, 29.579158316633265, 29.82565130260521, 30.072144288577153, 30.318637274549097, 30.56513026052104, 30.811623246492985, 31.05811623246493, 31.304609218436873, 31.551102204408817, 31.79759519038076, 32.04408817635271, 32.29058116232465, 32.53707414829659, 32.78356713426854, 33.03006012024048, 33.276553106212425, 33.523046092184366, 33.76953907815631, 34.016032064128254, 34.2625250501002, 34.50901803607214, 34.75551102204409, 35.00200400801603, 35.24849699398798, 35.49498997995992, 35.741482965931866, 35.987975951903806, 36.234468937875754, 36.480961923847694, 36.72745490981964, 36.97394789579158, 37.22044088176353, 37.46693386773547, 37.71342685370742, 37.95991983967936, 38.206412825651306, 38.452905811623246, 38.699398797595194, 38.945891783567134, 39.192384769539075, 39.43887775551102, 39.68537074148296, 39.93186372745491, 40.17835671342685, 40.4248496993988, 40.67134268537074, 40.91783567134269, 41.16432865731463, 41.410821643286575, 41.657314629258515, 41.90380761523046, 42.1503006012024, 42.39679358717435, 42.64328657314629, 42.88977955911824, 43.13627254509018, 43.38276553106213, 43.62925851703407, 43.875751503006015, 44.122244488977955, 44.3687374749499, 44.61523046092184, 44.86172344689379, 45.10821643286573, 45.35470941883767, 45.60120240480962, 45.84769539078156, 46.09418837675351, 46.34068136272545, 46.587174348697395, 46.833667334669336, 47.08016032064128, 47.326653306613224, 47.57314629258517, 47.81963927855711, 48.06613226452906, 48.312625250501, 48.55911823647295, 48.80561122244489, 49.052104208416836, 49.298597194388776, 49.545090180360724, 49.791583166332664, 50.03807615230461, 50.28456913827655, 50.5310621242485, 50.77755511022044, 51.02404809619239, 51.27054108216433, 51.517034068136276, 51.763527054108216, 52.01002004008016, 52.256513026052104, 52.503006012024045, 52.74949899799599, 52.99599198396793, 53.24248496993988, 53.48897795591182, 53.73547094188377, 53.98196392785571, 54.22845691382766, 54.4749498997996, 54.721442885771545, 54.967935871743485, 55.21442885771543, 55.46092184368737, 55.70741482965932, 55.95390781563126, 56.20040080160321, 56.44689378757515, 56.6933867735471, 56.93987975951904, 57.186372745490985, 57.432865731462925, 57.67935871743487, 57.92585170340681, 58.17234468937876, 58.4188376753507, 58.66533066132264, 58.91182364729459, 59.15831663326653, 59.40480961923848, 59.65130260521042, 59.897795591182366, 60.144288577154306, 60.390781563126254, 60.637274549098194, 60.88376753507014, 61.13026052104208, 61.37675350701403, 61.62324649298597, 61.86973947895792, 62.11623246492986, 62.362725450901806, 62.609218436873746, 62.855711422845694, 63.102204408817634, 63.34869739478958, 63.59519038076152, 63.84168336673347, 64.08817635270542, 64.33466933867736, 64.5811623246493, 64.82765531062124, 65.07414829659318, 65.32064128256513, 65.56713426853707, 65.81362725450902, 66.06012024048096, 66.30661322645291, 66.55310621242485, 66.79959919839679, 67.04609218436873, 67.29258517034069, 67.53907815631263, 67.78557114228457, 68.03206412825651, 68.27855711422846, 68.5250501002004, 68.77154308617234, 69.01803607214428, 69.26452905811624, 69.51102204408818, 69.75751503006012, 70.00400801603206, 70.25050100200401, 70.49699398797596, 70.7434869739479, 70.98997995991984, 71.23647294589178, 71.48296593186373, 71.72945891783567, 71.97595190380761, 72.22244488977955, 72.46893787575151, 72.71543086172345, 72.96192384769539, 73.20841683366733, 73.45490981963928, 73.70140280561122, 73.94789579158316, 74.1943887775551, 74.44088176352706, 74.687374749499, 74.93386773547094, 75.18036072144288, 75.42685370741484, 75.67334669338678, 75.91983967935872, 76.16633266533066, 76.41282565130261, 76.65931863727455, 76.90581162324649, 77.15230460921843, 77.39879759519039, 77.64529058116233, 77.89178356713427, 78.13827655310621, 78.38476953907815, 78.6312625250501, 78.87775551102204, 79.12424849699399, 79.37074148296593, 79.61723446893788, 79.86372745490982, 80.11022044088176, 80.3567134268537, 80.60320641282566, 80.8496993987976, 81.09619238476954, 81.34268537074148, 81.58917835671343, 81.83567134268537, 82.08216432865731, 82.32865731462925, 82.57515030060121, 82.82164328657315, 83.06813627254509, 83.31462925851703, 83.56112224448898, 83.80761523046093, 84.05410821643287, 84.3006012024048, 84.54709418837675, 84.7935871743487, 85.04008016032064, 85.28657314629258, 85.53306613226452, 85.77955911823648, 86.02605210420842, 86.27254509018036, 86.5190380761523, 86.76553106212425, 87.0120240480962, 87.25851703406813, 87.50501002004007, 87.75150300601203, 87.99799599198397, 88.24448897795591, 88.49098196392785, 88.7374749498998, 88.98396793587175, 89.23046092184369, 89.47695390781563, 89.72344689378758, 89.96993987975952, 90.21643286573146, 90.4629258517034, 90.70941883767534, 90.9559118236473, 91.20240480961924, 91.44889779559118, 91.69539078156312, 91.94188376753507, 92.18837675350701, 92.43486973947896, 92.6813627254509, 92.92785571142285, 93.17434869739479, 93.42084168336673, 93.66733466933867, 93.91382765531063, 94.16032064128257, 94.40681362725451, 94.65330661322645, 94.8997995991984, 95.14629258517034, 95.39278557114228, 95.63927855711422, 95.88577154308618, 96.13226452905812, 96.37875751503006, 96.625250501002, 96.87174348697395, 97.1182364729459, 97.36472945891784, 97.61122244488978, 97.85771543086172, 98.10420841683367, 98.35070140280561, 98.59719438877755, 98.84368737474949, 99.09018036072145, 99.33667334669339, 99.58316633266533, 99.82965931863727, 100.07615230460922, 100.32264529058116, 100.5691382765531, 100.81563126252505, 101.062124248497, 101.30861723446894, 101.55511022044088, 101.80160320641282, 102.04809619238478, 102.29458917835672, 102.54108216432866, 102.7875751503006, 103.03406813627255, 103.28056112224449, 103.52705410821643, 103.77354709418837, 104.02004008016031, 104.26653306613227, 104.51302605210421, 104.75951903807615, 105.00601202404809, 105.25250501002004, 105.49899799599199, 105.74549098196393, 105.99198396793587, 106.23847695390782, 106.48496993987976, 106.7314629258517, 106.97795591182364, 107.2244488977956, 107.47094188376754, 107.71743486973948, 107.96392785571142, 108.21042084168337, 108.45691382765531, 108.70340681362725, 108.9498997995992, 109.19639278557115, 109.44288577154309, 109.68937875751503, 109.93587174348697, 110.18236472945891, 110.42885771543087, 110.6753507014028, 110.92184368737475, 111.16833667334669, 111.41482965931864, 111.66132264529058, 111.90781563126252, 112.15430861723446, 112.40080160320642, 112.64729458917836, 112.8937875751503, 113.14028056112224, 113.3867735470942, 113.63326653306613, 113.87975951903807, 114.12625250501002, 114.37274549098197, 114.61923847695391, 114.86573146292585, 115.11222444889779, 115.35871743486975, 115.60521042084169, 115.85170340681363, 116.09819639278557, 116.34468937875752, 116.59118236472946, 116.8376753507014, 117.08416833667334, 117.33066132264528, 117.57715430861724, 117.82364729458918, 118.07014028056112, 118.31663326653306, 118.56312625250501, 118.80961923847696, 119.0561122244489, 119.30260521042084, 119.54909819639279, 119.79559118236473, 120.04208416833667, 120.28857715430861, 120.53507014028057, 120.78156312625251, 121.02805611222445, 121.27454909819639, 121.52104208416834, 121.76753507014028, 122.01402805611222, 122.26052104208416, 122.50701402805612, 122.75350701402806, 123.0])
+              .range(['#ffffb2ff', '#ffffb2ff', '#ffffb1ff', '#ffffb1ff', '#fffeb0ff', '#fffeb0ff', '#fffeafff', '#fffdafff', '#fffdaeff', '#fffdaeff', '#fffcadff', '#fffcacff', '#fffcacff', '#fffbabff', '#fffbabff', '#fffbaaff', '#fffbaaff', '#fffaa9ff', '#fffaa9ff', '#fffaa8ff', '#fff9a8ff', '#fff9a7ff', '#fff9a7ff', '#fff8a6ff', '#fff8a6ff', '#fff8a5ff', '#fff7a5ff', '#fff7a4ff', '#fff7a4ff', '#fff7a3ff', '#fff6a3ff', '#fff6a2ff', '#fff6a2ff', '#fff5a1ff', '#fff5a1ff', '#fff5a0ff', '#fff4a0ff', '#fff49fff', '#fff49eff', '#fff39eff', '#fff39dff', '#fff39dff', '#fff39cff', '#fff29cff', '#fff29bff', '#fff29bff', '#fff19aff', '#fff19aff', '#fff199ff', '#fff099ff', '#fff098ff', '#fff098ff', '#ffef97ff', '#ffef97ff', '#ffef96ff', '#ffef96ff', '#ffee95ff', '#ffee95ff', '#ffee94ff', '#ffed94ff', '#ffed93ff', '#ffed93ff', '#ffec92ff', '#ffec91ff', '#ffec91ff', '#ffeb90ff', '#ffeb90ff', '#ffeb8fff', '#ffeb8fff', '#ffea8eff', '#ffea8eff', '#ffea8dff', '#ffe98dff', '#ffe98cff', '#ffe98cff', '#ffe88bff', '#ffe88bff', '#ffe88aff', '#ffe78aff', '#ffe789ff', '#ffe789ff', '#ffe788ff', '#ffe688ff', '#ffe687ff', '#ffe687ff', '#ffe586ff', '#ffe586ff', '#ffe585ff', '#ffe485ff', '#ffe484ff', '#ffe483ff', '#ffe383ff', '#ffe382ff', '#ffe382ff', '#ffe381ff', '#ffe281ff', '#ffe280ff', '#ffe280ff', '#ffe17fff', '#ffe17fff', '#ffe17eff', '#ffe07eff', '#ffe07dff', '#ffe07dff', '#ffdf7cff', '#ffdf7cff', '#ffdf7bff', '#ffdf7bff', '#ffde7aff', '#ffde7aff', '#ffde79ff', '#ffdd79ff', '#ffdd78ff', '#ffdd78ff', '#ffdc77ff', '#ffdc77ff', '#ffdc76ff', '#ffdb75ff', '#ffdb75ff', '#ffdb74ff', '#ffdb74ff', '#ffda73ff', '#ffda73ff', '#ffda72ff', '#ffd972ff', '#ffd971ff', '#ffd971ff', '#ffd870ff', '#ffd870ff', '#ffd86fff', '#ffd76fff', '#ffd76eff', '#ffd76eff', '#ffd76dff', '#ffd66dff', '#ffd66cff', '#ffd66cff', '#ffd56bff', '#ffd56bff', '#ffd56aff', '#ffd46aff', '#ffd469ff', '#ffd468ff', '#ffd368ff', '#ffd367ff', '#ffd367ff', '#ffd366ff', '#ffd266ff', '#ffd265ff', '#ffd265ff', '#ffd164ff', '#ffd164ff', '#ffd163ff', '#ffd063ff', '#ffd062ff', '#ffd062ff', '#ffcf61ff', '#ffcf61ff', '#ffcf60ff', '#ffcf60ff', '#ffce5fff', '#ffce5fff', '#ffce5eff', '#ffcd5eff', '#ffcd5dff', '#ffcd5dff', '#fecc5cff', '#fecc5cff', '#fecc5cff', '#fecb5bff', '#fecb5bff', '#fecb5bff', '#feca5bff', '#feca5bff', '#fec95aff', '#fec95aff', '#fec95aff', '#fec85aff', '#fec85aff', '#fec759ff', '#fec759ff', '#fec759ff', '#fec659ff', '#fec659ff', '#fec658ff', '#fec558ff', '#fec558ff', '#fec458ff', '#fec458ff', '#fec457ff', '#fec357ff', '#fec357ff', '#fec357ff', '#fec257ff', '#fec257ff', '#fec156ff', '#fec156ff', '#fec156ff', '#fec056ff', '#fec056ff', '#febf55ff', '#febf55ff', '#febf55ff', '#febe55ff', '#febe55ff', '#febe54ff', '#febd54ff', '#febd54ff', '#febc54ff', '#febc54ff', '#febc53ff', '#febb53ff', '#febb53ff', '#febb53ff', '#feba53ff', '#feba52ff', '#feb952ff', '#feb952ff', '#feb952ff', '#feb852ff', '#feb851ff', '#feb851ff', '#feb751ff', '#feb751ff', '#feb651ff', '#feb651ff', '#feb650ff', '#feb550ff', '#feb550ff', '#feb450ff', '#feb450ff', '#feb44fff', '#feb34fff', '#feb34fff', '#feb34fff', '#feb24fff', '#feb24eff', '#feb14eff', '#feb14eff', '#feb14eff', '#feb04eff', '#feb04dff', '#feb04dff', '#feaf4dff', '#feaf4dff', '#feae4dff', '#feae4cff', '#feae4cff', '#fead4cff', '#fead4cff', '#feac4cff', '#feac4cff', '#feac4bff', '#feab4bff', '#feab4bff', '#feab4bff', '#feaa4bff', '#feaa4aff', '#fea94aff', '#fea94aff', '#fea94aff', '#fea84aff', '#fea849ff', '#fea849ff', '#fea749ff', '#fea749ff', '#fea649ff', '#fea648ff', '#fea648ff', '#fea548ff', '#fea548ff', '#fea548ff', '#fea447ff', '#fea447ff', '#fea347ff', '#fea347ff', '#fea347ff', '#fea246ff', '#fea246ff', '#fea146ff', '#fea146ff', '#fea146ff', '#fea046ff', '#fea045ff', '#fea045ff', '#fe9f45ff', '#fe9f45ff', '#fe9e45ff', '#fe9e44ff', '#fe9e44ff', '#fe9d44ff', '#fe9d44ff', '#fe9d44ff', '#fe9c43ff', '#fe9c43ff', '#fe9b43ff', '#fe9b43ff', '#fe9b43ff', '#fe9a42ff', '#fe9a42ff', '#fe9942ff', '#fe9942ff', '#fe9942ff', '#fe9841ff', '#fe9841ff', '#fe9841ff', '#fe9741ff', '#fe9741ff', '#fe9640ff', '#fe9640ff', '#fe9640ff', '#fe9540ff', '#fe9540ff', '#fe9540ff', '#fe943fff', '#fe943fff', '#fe933fff', '#fe933fff', '#fe933fff', '#fe923eff', '#fe923eff', '#fe913eff', '#fe913eff', '#fe913eff', '#fe903dff', '#fe903dff', '#fe903dff', '#fe8f3dff', '#fe8f3dff', '#fe8e3cff', '#fe8e3cff', '#fe8e3cff', '#fd8d3cff', '#fd8d3cff', '#fd8c3bff', '#fd8b3bff', '#fd8b3bff', '#fd8a3bff', '#fd893bff', '#fc893bff', '#fc883aff', '#fc873aff', '#fc873aff', '#fc863aff', '#fc853aff', '#fc8439ff', '#fb8439ff', '#fb8339ff', '#fb8239ff', '#fb8239ff', '#fb8138ff', '#fb8038ff', '#fa8038ff', '#fa7f38ff', '#fa7e38ff', '#fa7e37ff', '#fa7d37ff', '#fa7c37ff', '#fa7b37ff', '#f97b37ff', '#f97a36ff', '#f97936ff', '#f97936ff', '#f97836ff', '#f97736ff', '#f87735ff', '#f87635ff', '#f87535ff', '#f87535ff', '#f87435ff', '#f87335ff', '#f77234ff', '#f77234ff', '#f77134ff', '#f77034ff', '#f77034ff', '#f76f33ff', '#f76e33ff', '#f66e33ff', '#f66d33ff', '#f66c33ff', '#f66c32ff', '#f66b32ff', '#f66a32ff', '#f56932ff', '#f56932ff', '#f56831ff', '#f56731ff', '#f56731ff', '#f56631ff', '#f46531ff', '#f46530ff', '#f46430ff', '#f46330ff', '#f46230ff', '#f46230ff', '#f46130ff', '#f3602fff', '#f3602fff', '#f35f2fff', '#f35e2fff', '#f35e2fff', '#f35d2eff', '#f25c2eff', '#f25c2eff', '#f25b2eff', '#f25a2eff', '#f2592dff', '#f2592dff', '#f2582dff', '#f1572dff', '#f1572dff', '#f1562cff', '#f1552cff', '#f1552cff', '#f1542cff', '#f0532cff', '#f0532bff', '#f0522bff', '#f0512bff', '#f0502bff', '#f0502bff', '#ef4f2aff', '#ef4e2aff', '#ef4e2aff', '#ef4d2aff', '#ef4c2aff', '#ef4c2aff', '#ef4b29ff', '#ee4a29ff', '#ee4929ff', '#ee4929ff', '#ee4829ff', '#ee4728ff', '#ee4728ff', '#ed4628ff', '#ed4528ff', '#ed4528ff', '#ed4427ff', '#ed4327ff', '#ed4327ff', '#ec4227ff', '#ec4127ff', '#ec4026ff', '#ec4026ff', '#ec3f26ff', '#ec3e26ff', '#ec3e26ff', '#eb3d25ff', '#eb3c25ff', '#eb3c25ff', '#eb3b25ff', '#eb3a25ff', '#eb3a24ff', '#ea3924ff', '#ea3824ff', '#ea3724ff', '#ea3724ff', '#ea3624ff', '#ea3523ff', '#ea3523ff', '#e93423ff', '#e93323ff', '#e93323ff', '#e93222ff', '#e93122ff', '#e93122ff', '#e83022ff', '#e82f22ff', '#e82e21ff', '#e82e21ff', '#e82d21ff', '#e82c21ff', '#e72c21ff', '#e72b20ff', '#e72a20ff', '#e72a20ff', '#e72920ff', '#e72820ff', '#e7271fff', '#e6271fff', '#e6261fff', '#e6251fff', '#e6251fff', '#e6241fff', '#e6231eff', '#e5231eff', '#e5221eff', '#e5211eff', '#e5211eff', '#e5201dff', '#e51f1dff', '#e41e1dff', '#e41e1dff', '#e41d1dff', '#e41c1cff', '#e41c1cff', '#e41b1cff', '#e41a1cff', '#e31a1cff']);
+    
+
+    color_map_eb71c6586c826934062b672eff56e1e8.x = d3.scale.linear()
+              .domain([0.0, 123.0])
+              .range([0, 450 - 50]);
+
+    color_map_eb71c6586c826934062b672eff56e1e8.legend = L.control({position: 'topright'});
+    color_map_eb71c6586c826934062b672eff56e1e8.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_eb71c6586c826934062b672eff56e1e8.legend.addTo(map_2966b3f8c7171039c69119b397b139a2);
+
+    color_map_eb71c6586c826934062b672eff56e1e8.xAxis = d3.svg.axis()
+        .scale(color_map_eb71c6586c826934062b672eff56e1e8.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([0.0, 41.0, 82.0, 123.0]);
+
+    color_map_eb71c6586c826934062b672eff56e1e8.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_eb71c6586c826934062b672eff56e1e8.g = color_map_eb71c6586c826934062b672eff56e1e8.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_eb71c6586c826934062b672eff56e1e8.g.selectAll("rect")
+        .data(color_map_eb71c6586c826934062b672eff56e1e8.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_eb71c6586c826934062b672eff56e1e8.x(color_map_eb71c6586c826934062b672eff56e1e8.color.domain()[i - 1]) : color_map_eb71c6586c826934062b672eff56e1e8.x.range()[0],
+            x1: i < color_map_eb71c6586c826934062b672eff56e1e8.color.domain().length ? color_map_eb71c6586c826934062b672eff56e1e8.x(color_map_eb71c6586c826934062b672eff56e1e8.color.domain()[i]) : color_map_eb71c6586c826934062b672eff56e1e8.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_eb71c6586c826934062b672eff56e1e8.g.call(color_map_eb71c6586c826934062b672eff56e1e8.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Outbreak count per region");
+    
+            tile_layer_894ea0d3d5671c65e31586163161eea7.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_59c0d71143df69d92e2f621456b9953f.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_868f699e7089f2666e162be94163473c.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_ef0933eab8bf6e38e67f34c532330106.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_fc11207d7c43ea652cd7829e8fb2edb9.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_94c6a2476a2b319d471c37e089df688a.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_ef307921810236a58f8f4d727ef0cfb0.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_3d436beb42e74762eda37364a8bb8b74.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_5ab50497f03b2e9d7ddbdb9dbce53a82.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_f690d5cc24e00d4b95734257998ba618.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_9d9cb6200a07b9d46109a2ea25346991.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_45ccd3908033bcead31c37388e72183e.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_56f00198e322b3f7d93687c039d16488.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_c6c82a34c5da4b1f7eec4476e27cee7f.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_ccb30c073c2c74585cbb2d0a6f85031a.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_a76566085cc9ae2fcbd9641e9b82b54e.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_9933a097aaab087151478afec9f26b13.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_62f556f556b494e04362266e453434be.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_51013e50c8709245b453b8df492308f3.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_69f93d0dec2460dac7b474192d6bed16.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_7c16cf1bb80e0794cf55e7e3aeba2e57.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_e019279af2745a8e72e1625668835a2b.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_3a05710b00dff7be26934c7b585f1efe.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+    
+            geo_json_b76620b7d801bfcffb8a4da9244ca419.addTo(map_2966b3f8c7171039c69119b397b139a2);
+        
+</script>
+</html>
