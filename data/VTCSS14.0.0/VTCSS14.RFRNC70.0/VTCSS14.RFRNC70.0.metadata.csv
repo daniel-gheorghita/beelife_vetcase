@@ -1,0 +1,4 @@
+﻿"Table name",UID,"Column name","Data type",Descriptor,Unit,Description
+References,VTCSS14.RFRNC70.0,îd,,VTCSS14.0.SRCDA377,,"Reference to the data source."
+References,VTCSS14.RFRNC70.0,format,,0.0.TEXTA315,,
+References,VTCSS14.RFRNC70.0,reference,,0.0.TEXTA315,,
