@@ -4,7 +4,7 @@
 
 Run the CLI command (from inside the project folder):
 ```
-docker build . -t kbc
+docker build . -t beelife
 ```
 
 #### Run the environment
@@ -19,9 +19,10 @@ docker compose up
 
 In the browser, navigate to the address 127.0.0.1:8888. 
 
-The src folder contains 2 notebooks:
-- direct_marketing_optimization_dev.ipynb - the development Notebook for the task;
-- direct_marketing_optimization.ipynb - the final Notebook (clean).
+The src folder contains a single notebook:
+- vetcases_standardization.ipynb - the development Notebook for the task;
+
+The Notebook contains a description at the top and simply running it at once or cell-by-cell will display the results.
 
 #### Notes
 
