@@ -1,4 +1,4 @@
-# KBC Direct Marketing Optimization
+# BeeLife - analysis and visualization of bee health reports in Belgium and Austria
 
 #### Build the environment
 
